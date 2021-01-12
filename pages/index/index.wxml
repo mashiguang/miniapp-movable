@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+
+  <movable-area>
+    <movable-view class="option" y="{{option.y}}" style="z-index:{{option.active? '99':''}}" wx:for="{{options}}" wx:for-item="option" wx:key="id" direction="vertical"
+      data-id="{{option.id}}"
+      bindtouchstart="touchstart"
+      bindtouchend="touchend">
+      <view>
+        {{option.name}}
+      </view>
+    </movable-view>
+  </movable-area>
+
+  <view class="flex_container">
+    <view wx:for="{{options}}" wx:for-item="option" wx:key="id">
+      {{option.name}}
+    </view>
+  </view>
+
+</view>
