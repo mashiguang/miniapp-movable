@@ -29,10 +29,12 @@ movable-view {
   width: 100%;
   background: #1AAD19;
   color: #fff;
+  display: flex;
+  align-items: center;
 }
 
 movable-area {
-  height: 200px;
+  height: 300px;
   width: 90%;
   /* margin: 50rpx; */
   background-color: #ccc;
