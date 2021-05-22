@@ -1,0 +1,16 @@
+<view class="opts">
+  <view class="opt {{mover.id == item.id ? 'opt-selected' : ''}}" 
+        style="top: {{moverOffset}}px;"
+        wx:for="{{options}}" 
+        wx:for-item="item" 
+        wx:key="id" 
+        data-id="{{item.id}}"
+        data-top="{{item.top}}"
+        data-index="{{index}}"
+        bind:touchstart="touchstart"
+        bind:touchend="touchend"
+        bind:touchmove="touchmove"
+        >
+    id:{{item.id}}-{{item.name}}
+  </view>
+</view>

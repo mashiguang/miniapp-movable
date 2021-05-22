@@ -1,67 +1,66 @@
-// index.js
-// 获取应用实例
-const app = getApp()
-
+// pages/index/index.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    options: [
-      {id: 1, name: 'option1', y: 0, active: false},
-      {id: 2, name: 'option2', y: 50, active: false},
-      {id: 3, name: 'option3', y: 100, active: false},
-      {id: 4, name: 'option4', y: 150, active: false}
-    ]
-  },
-  onLoad() {
-    
-  },
-  touchstart(e) {
-    console.log('touchstart', e)
-    let id = e.currentTarget.dataset.id
-
-    var options = this.data.options
-    options.forEach(o => {
-      o.active = false;
-    })
-    var o = options.find(o => o.id == id)
-    console.log(o)
-    o.active = true
-
-    this.setData({
-      options
-    })
 
   },
-  touchend(e) {
-    var that = this
-    console.log('touchend', e)
 
-    wx.createSelectorQuery().selectAll('.option').boundingClientRect(rects => {
-      rects.forEach(rect => {
-        console.log('rect', rect)
-      })
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
 
-      rects.sort((a, b) => {
-        return a.top - b.top
-      })
-      console.log('rects', rects)
+  },
 
-      var arr = that.data.options.map(o => {
-        var _i = rects.findIndex(r => r.dataset.id == o.id)
-        return {y : _i * 50}
-      })
-      console.log('arr', arr)
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
 
-      arr.forEach((o, index) => {
-        console.log(o)
-        that.setData({
-          ['options['+index+'].y'] : o.y
-        })
-      })
+  },
 
-    }).exec()
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
 
+  },
 
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
 
   }
-
 })

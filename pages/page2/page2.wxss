@@ -1,0 +1,16 @@
+.opts {
+  display: flex;
+  flex-direction: column;
+}
+
+.opt {
+  margin: 0 5px 10px 5px;
+  padding: 5px;
+  background: lightgray;
+}
+
+.opt-selected {
+  position: relative;
+  left: 10px;
+  background: lightgreen;
+}
